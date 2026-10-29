@@ -1324,6 +1324,51 @@ p  { line-height: var(--lh-body); }
   line-height: 1.8 !important;
 }
 
+/* Refined Owner Introduction */
+.about__owner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 28px 0 24px 0;
+  padding: 14px 20px;
+  background: var(--color-neutral-light);
+  border: 1px solid var(--color-neutral-dark);
+  border-left: 3px solid var(--color-primary);
+  border-radius: 2px;
+}
+
+.about__owner-line {
+  width: 24px;
+  height: 1.5px;
+  background: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.about__owner-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.about__owner-name {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-charcoal);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.about__owner-title {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+}
+
 .about__fact-box {
   margin-top: 36px;
   padding: 28px 32px;
@@ -2909,7 +2954,41 @@ p  { line-height: var(--lh-body); }
   font-size: 13px;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 16px;
+}
+
+.footer__ownership {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-lavender);
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.footer__ownership-brand {
+  color: #ffffff;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.footer__ownership-sep {
+  color: var(--color-primary);
+  font-weight: 300;
+}
+
+.footer__ownership-owner {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 300;
+}
+
+.footer__ownership-owner strong {
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.03em;
 }
 
 .footer__badge {
@@ -3635,6 +3714,14 @@ body:has(#fb-08-dial:popover-open) .back-to-top,
   /* Phase 3 mobile adjustments */
   .trust__grid {
     grid-template-columns: 1fr;
+  }
+  .about__owner {
+    margin: 20px 0;
+    padding: 12px 16px;
+    gap: 12px;
+  }
+  .about__owner-name {
+    font-size: 1.2rem;
   }
   .about__fact-box {
     padding: 20px;

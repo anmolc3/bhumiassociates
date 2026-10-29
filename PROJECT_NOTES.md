@@ -531,3 +531,31 @@ The website color scheme was updated using the three exact brand colors:
 - [x] Full automated QA script (`scratch/test_qa.js`): Passed with **0 errors**.
 - [x] Syntax check (`node -c js/main.js js/properties.js`): Passed with **0 errors**.
 - [x] Local HTTP server probe: Returned HTTP 200 OK.
+
+---
+
+## Owner Name Attribution Integration ("Chirag Sharma") — Completed 2026-10-29
+
+### Overview of Completed Changes
+1. **About Section Owner Introduction:**
+   - Added a refined, minimal editorial owner introduction card within the existing About Us section:
+     - **`Chirag Sharma`** (`font-family: var(--font-heading); font-size: 1.35rem; font-weight: 600; text-transform: uppercase; color: #24201d;`)
+     - **`Owner, Bhumi Associates`** (`font-family: var(--font-body); font-size: 12px; font-weight: 400; color: #6F4E37;`)
+     - Subtle Coffee Brown accent line (`24px x 1.5px`) with clean Platinum Gray surface (`background: var(--color-neutral-light)`) and Coffee Brown border-left accent.
+     - Preserved Apollo editorial layout without inserting portraits or unverified biographical claims.
+2. **Footer Ownership Line:**
+   - Added a subtle ownership attribution in the brand column of the footer:
+     - **`Bhumi Associates | Owner: Chirag Sharma`**
+     - Styled with Soft Lavender secondary tone (`var(--color-lavender)`), Coffee Brown separator pipe, and crisp white bold owner name.
+     - Responsive flex layout with zero collision or horizontal overflow on small mobile viewports.
+
+### Files Changed
+- `index.html`: Added `.about__owner` card in the About text column and `.footer__ownership` in the footer brand column.
+- `css/style.css`: Added styles for `.about__owner`, `.about__owner-line`, `.about__owner-name`, `.about__owner-title`, `.footer__ownership`, `.footer__ownership-brand`, `.footer__ownership-sep`, `.footer__ownership-owner`, and mobile breakpoint scaling.
+- `PROJECT_NOTES.md`: Updated with implementation record.
+
+### Verification Results
+- [x] Full automated QA script (`scratch/test_qa.js`): Passed with **0 errors**.
+- [x] JavaScript Syntax Check (`node -c js/main.js js/properties.js`): Passed with **0 errors**.
+- [x] Local HTTP server probe: Returned HTTP 200 OK for `index.html` and `css/style.css`.
+- [x] Verified desktop and mobile layouts across all breakpoints (320px, 480px, 768px, 960px, 1200px).
