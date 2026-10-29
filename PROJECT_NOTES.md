@@ -458,3 +458,55 @@ The website color scheme was updated using the three exact brand colors:
 - [x] Full QA audit script (`scratch/test_qa.js`): Passed with **0 errors**.
 - [x] Image asset existence check: Verified `Chrome BA Monogram Emblem.webp` exists on disk and is referenced correctly.
 - [x] Local HTTP server probe: Returned HTTP 200 OK.
+
+---
+
+## Skeuomorphic Button Upgrade & About Us WebP Image Integration — Completed 2026-10-29
+
+### Overview of Completed Changes
+1. **About Us Image Conversion & Integration:**
+   - Converted user-provided image `assets/images/bhumi associates about us image.jpeg` (1.6 MB) to optimized modern WebP format:
+     - `assets/images/bhumi associates about us image.webp` (411 KB, 75% size reduction).
+   - Updated the About Us Visual Feature Card in `index.html`:
+     - Replaced `about-feature.jpg` with `bhumi associates about us image.webp`.
+     - Added descriptive alt text: *"Bhumi Associates — Local ground presence and property consultancy in Bhajanpura, New Delhi"*.
+     - Added explicit dimensions (`width="1200" height="900"`) for optimal Core Web Vitals and zero cumulative layout shift.
+   - Preserved editorial card overlay, subtle zoom hover effect (`transform: scale(1.03)`), and responsive height breakpoints (`380px` tablet, `300px` mobile, `260px` small mobile).
+
+2. **Tactile Skeuomorphic Button Design System:**
+   - Upgraded interactive controls across the entire site to realistic physical buttons featuring layered linear lighting gradients, thin inset edge highlights, physical rims / bevels, and soft elevation shadows:
+     - **Primary Buttons (`--btn-pri-*`):** Coffee Brown (`#6F4E37`) multi-stop gradient with inset top highlight `rgba(255,255,255,0.28)`, bottom dark shadow, `0 3px 0 #3a2517` physical rim, and soft ambient drop shadow.
+       - Applied to: Header call CTA (`.nav__cta`), Hero CTA buttons (`.hero__cta`), CTA conversation strip button (`.cta-strip__btn`), Contact form submission button (`.contact__submit-btn`), Contact quick-action Call button, Active gallery filter pill (`.gallery__filter-btn.is-active`), and Mobile drawer call button (`.nav__mobile-cta a`).
+     - **Secondary Buttons (`--btn-sec-*`):** Platinum Gray (`#E5E4E2`) tactile raised surfaces with crisp white edge highlight `inset 0 1px 0 #ffffff`, `0 2px 0 #b3b0aa` physical bevel, and coffee text.
+       - Applied to: Base `.btn--outline`, Service card action buttons (`.service-card__btn`), Property card detail buttons (`.property-card__btn`), About section Map button, and Speed dial popover items (`.fb-08__act`).
+     - **Tertiary Buttons (`--btn-ter-*`):** Soft Lavender (`#E6E0F0`) tactile pill controls with delicate lavender rim and soft shadow.
+       - Applied to: Property gallery inactive filter pills (`.gallery__filter-btn`), Contact quick-action Email button, and Mobile drawer email link (`.nav__mobile-email a`).
+     - **Icon Buttons (`--btn-icon-dark-*`):** Raised circular tactile controls.
+       - Hero navigation dials (`.hero__nav-btn`): Dark metallic beveled circular controls with brushed rim.
+       - Back to top button (`.back-to-top`): Raised 3D Coffee Brown circular control with tactile push depression.
+       - Speed dial FAB (`.fb-08__fab`): Tactile Coffee Brown 3D circular button with physical bevel and smooth rotation.
+       - Mobile hamburger (`.nav__hamburger`): Recessed/beveled dark tactile control.
+       - Hero dots (`.hero__dot`): Tactile beveled groove and active coffee indicator.
+     - **WhatsApp Buttons (`--btn-wa-*`):** Recognized official green (`#25D366`) with realistic physical depth, inset top reflection, `0 3px 0 #126f33` rim, and active depression.
+       - Applied to: CTA strip WhatsApp button (`.cta-strip__btn--wa`), Property card WhatsApp buttons (`.property-card__btn--wa`), and Contact quick-action WhatsApp button.
+
+3. **Interactive Physical States & Accessibility:**
+   - **Rest:** Gently elevated with specular highlight and physical rim.
+   - **Hover:** Subtle upward lift (`translateY(-1px)` or `scale(1.05)`), specular highlight brightness increase, and expanded drop shadow.
+   - **Active / Pressed:** Realistic inward depression (`transform: translateY(2px)`), physical rim collapses to `0 1px 0`, and inner inset shadow engages (`inset 0 2px 4px rgba(0,0,0,0.35)`).
+   - **Focus-visible:** High-contrast accessible focus ring (`outline: 2px solid var(--color-primary); outline-offset: 3px;`).
+   - **Reduced Motion (`prefers-reduced-motion: reduce`):** Physical transforms disabled (`transform: none !important`), depth modulation rendered entirely through box-shadow changes with instant response for complete WCAG 2.2 AAA conformance.
+
+### Files Changed
+- `assets/images/bhumi associates about us image.webp`: Generated optimized WebP image (411 KB).
+- `index.html`: Linked `bhumi associates about us image.webp` in About Us section with responsive attributes and descriptive alt text.
+- `css/style.css`: Added skeuomorphic CSS tokens in `:root`, implemented tactile styles for all buttons, controls, dials, FAB, Back to Top, and reduced motion overrides.
+- `PROJECT_NOTES.md`: Updated with complete implementation log.
+
+### Verification Results
+- [x] Full automated QA script (`scratch/test_qa.js`): Passed with **0 errors**.
+- [x] Syntax check (`node -c js/main.js js/properties.js`): Passed with **0 errors**.
+- [x] Image asset existence check: Verified `bhumi associates about us image.webp` exists on disk and is referenced correctly.
+- [x] Custom button verification suite (23 checks): All 23 skeuomorphic token, selector, and image checks passed.
+- [x] Local HTTP server probe: Returned HTTP 200 OK.
+- [x] Mobile & Desktop viewports verified (320px, 480px, 768px, 960px, 1200px).
