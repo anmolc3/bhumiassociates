@@ -1408,8 +1408,35 @@ p  { line-height: var(--lh-body); }
 .about__image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(21,21,21,0.5) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(21,21,21,0.65) 100%);
   pointer-events: none;
+}
+
+.about__image-tag {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  background: rgba(21, 21, 21, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(111, 78, 55, 0.55);
+  border-left: 3px solid var(--color-primary);
+  padding: 8px 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  pointer-events: auto;
+}
+
+.about__image-tag-name {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 1;
 }
 
 .about__caption-card {
@@ -3614,6 +3641,15 @@ body:has(#fb-08-dial:popover-open) .back-to-top,
   }
   .about__image {
     height: 300px;
+  }
+  .about__image-tag {
+    bottom: 14px;
+    left: 14px;
+    padding: 6px 12px;
+  }
+  .about__image-tag-name {
+    font-size: 1.05rem;
+    letter-spacing: 0.1em;
   }
   .cta-strip {
     padding: 60px 0;

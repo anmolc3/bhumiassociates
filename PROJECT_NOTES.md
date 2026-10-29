@@ -510,3 +510,24 @@ The website color scheme was updated using the three exact brand colors:
 - [x] Custom button verification suite (23 checks): All 23 skeuomorphic token, selector, and image checks passed.
 - [x] Local HTTP server probe: Returned HTTP 200 OK.
 - [x] Mobile & Desktop viewports verified (320px, 480px, 768px, 960px, 1200px).
+
+---
+
+## About Us Person Tag Integration ("Chirag Sharma") — Completed 2026-10-29
+
+### Overview
+- Added an elegant, editorial nameplate tag on the **bottom-left** of the About Us visual feature image:
+  - Text: **`Chirag Sharma`**
+  - Font: `Poiret One` (`--font-heading`), uppercase, `letter-spacing: 0.12em`.
+  - Design: Frosted glass panel with `backdrop-filter: blur(8px)`, semi-translucent dark background (`rgba(21, 21, 21, 0.82)`), thin border with bronze highlight, and coffee brown vertical accent line (`border-left: 3px solid #6F4E37`).
+  - Responsiveness: Scaled on mobile viewports for clean layout and zero overflow.
+
+### Files Changed
+- `index.html`: Added `.about__image-tag` containing `Chirag Sharma` inside `.about__image-frame`.
+- `css/style.css`: Added styles for `.about__image-tag` and `.about__image-tag-name`, with mobile breakpoint scaling.
+- `PROJECT_NOTES.md`: Updated with implementation record.
+
+### Verification Results
+- [x] Full automated QA script (`scratch/test_qa.js`): Passed with **0 errors**.
+- [x] Syntax check (`node -c js/main.js js/properties.js`): Passed with **0 errors**.
+- [x] Local HTTP server probe: Returned HTTP 200 OK.
