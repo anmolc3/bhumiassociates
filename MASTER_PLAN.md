@@ -12,9 +12,11 @@
 | **Business name** | Bhumi Associates |
 | **Business type** | Real estate — property buying and selling |
 | **Address** | D/556B, Punjabi Colony, Block D, Bhajanpura, Shahdara, New Delhi, Delhi 110053, India |
-| **Phone** | +91 98716 53127 |
-| **Call link** | `tel:+919871653127` |
-| **WhatsApp** | `https://wa.me/919871653127` |
+| **Phone** | +91 93107 04571 |
+| **Call link** | `tel:+919310704571` |
+| **WhatsApp** | `https://wa.me/919310704571` |
+| **Email** | `Bhumiassociates2609@gmail.com` |
+| **Email link** | `mailto:Bhumiassociates2609@gmail.com` |
 | **Google Maps** | `https://maps.app.goo.gl/ohnXseNPDSoFGzv17` |
 
 ### Primary goals

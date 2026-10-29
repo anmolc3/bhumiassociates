@@ -359,3 +359,102 @@ The website color scheme was updated using the three exact brand colors:
 - [x] Syntax check (`node -c js/main.js js/properties.js`): Passed with 0 errors.
 - [x] Local HTTP server probe: Returned HTTP 200 OK for both `index.html` and `css/style.css` with all components present.
 - [x] Responsive layout verified across viewports (mobile 320px, tablet 768px, desktop 1200px).
+
+---
+
+## Contact Details Update & Back to Top Button — Completed 2026-10-29
+
+### Overview of Completed Changes
+1. **Phone Number Updated Everywhere to `+91 93107 04571`:**
+   - Replaced all old instances (`+91 98716 53127` / `tel:+919871653127`) across the codebase.
+   - Exact telephone links: `<a href="tel:+919310704571">+91 93107 04571</a>`.
+   - Updated in:
+     - Header topbar phone link & icon
+     - Mobile navigation menu CTA
+     - About section verified business details card
+     - Business introduction assistance card
+     - Full-width CTA conversation strip
+     - Contact form submission description
+     - Contact details card and quick-action buttons
+     - Footer contact list
+     - Floating speed dial action button (`.fb-08__dock`)
+     - Schema.org LocalBusiness structured data (`telephone`)
+     - Automated QA audit verified 9 `tel:` links strictly match `tel:+919310704571`.
+
+2. **WhatsApp Links Updated Everywhere to `https://wa.me/919310704571`:**
+   - Replaced all old instances (`https://wa.me/919871653127`) across the website.
+   - Updated in:
+     - Header topbar WhatsApp link
+     - Full-width CTA conversation strip button
+     - Contact form submission handler in `js/main.js` (opening dynamic WhatsApp message with all validated inputs)
+     - Contact details card and quick-action buttons
+     - Footer contact list
+     - Floating speed dial action button (`.fb-08__dock`)
+     - Property gallery cards in `js/properties.js` (all 6 listing enquiry links)
+     - Preserved `target="_blank"` and `rel="noopener noreferrer"`.
+     - Automated QA audit verified 6 `wa.me` links strictly match `https://wa.me/919310704571`.
+
+3. **Business Email Added:**
+   - Official email: `Bhumiassociates2609@gmail.com`.
+   - Clickable working link: `<a href="mailto:Bhumiassociates2609@gmail.com">Bhumiassociates2609@gmail.com</a>`.
+   - Added to:
+     - Header topbar (with email SVG icon)
+     - Mobile navigation drawer
+     - Contact Section verified details card (`.contact__info-list`)
+     - Contact quick actions (`Send Email` button)
+     - Footer contact list (`.footer__contact-list`)
+     - Schema.org LocalBusiness structured data (`email`)
+     - Automated QA audit verified 5 `mailto:` links strictly match `mailto:Bhumiassociates2609@gmail.com`.
+
+4. **Back to Top Button Added:**
+   - Minimal circular button (44px x 44px) with upward SVG arrow.
+   - Coffee Brown background (`#6F4E37`) with white arrow.
+   - Accessible label: `aria-label="Back to top"` and `title="Back to top"`.
+   - Positioned near bottom-right above floating contact dock:
+     - Desktop: `right: calc(clamp(18px, 4vw, 36px) + 7px); bottom: calc(clamp(18px, 4vw, 36px) + 68px);`
+     - Mobile: `right: 23px; bottom: 84px;`
+   - Smooth reveal after scrolling down past 350px.
+   - Click handler smoothly scrolls to page top (`window.scrollTo({ top: 0, behavior: 'smooth' })`).
+   - Automatically hides when returning to top (`scrollY <= 350px`).
+   - Concealed without collision when floating speed dial popover is open.
+   - Full WCAG adherence with `prefers-reduced-motion` instantaneous scroll and disabled transitions.
+
+### Files Changed
+- `index.html`: Updated all phone and WhatsApp links; added email to topbar, mobile menu, contact card, and footer; added `#back-to-top` button.
+- `js/properties.js`: Updated all 6 property card `enquiryLink` targets to `https://wa.me/919310704571`.
+- `js/main.js`: Updated form submission WhatsApp target and status text; added `#back-to-top` scroll observer and click listener with reduced-motion support.
+- `css/style.css`: Added styles for `.back-to-top`, hover/focus states, mobile positioning, and reduced-motion reset.
+- `MASTER_PLAN.md`: Updated verified business facts (Phone, WhatsApp, Email).
+- `PROJECT_NOTES.md`: Documented completed updates.
+
+### Verification Results
+- [x] Full automated QA script (`scratch/test_qa.js`): Passed with **0 errors**.
+- [x] Syntax check (`node -c js/main.js js/properties.js`): Passed with **0 errors**.
+- [x] Zero occurrences of old phone number (`98716`) across all website code files.
+- [x] Local HTTP server probe: Returned HTTP 200 OK for `index.html` and `css/style.css`.
+- [x] Desktop, tablet, and mobile layouts verified.
+
+---
+
+## Brand Logo Emblem Conversion & Integration — Completed 2026-10-29
+
+### Overview
+- Converted user-provided image `assets/images/Chrome BA Monogram Emblem.png` (999 KB) to optimized modern WebP format:
+  - `assets/images/Chrome BA Monogram Emblem.webp` (153 KB, 85% size reduction).
+  - Preserved crisp RGBA alpha channel transparency and trimmed empty bounding-box margins.
+- Integrated the Chrome Monogram Emblem into the website:
+  - **Navigation Header (`.nav__logo`):** Added `<img>` tag with responsive sizing (`height: 40px`, hover scale & drop shadow) beside the brand title.
+  - **Footer (`.footer__logo`):** Added `<img>` tag with responsive sizing (`height: 48px`, hover scale & drop shadow).
+  - **Favicon:** Added `<link rel="icon" type="image/webp" href="assets/images/Chrome BA Monogram Emblem.webp">` for high-resolution browser tabs.
+  - **Responsive Overrides:** Adjusted logo emblem dimensions on mobile (`height: 34px` at `<= 768px`, `height: 28px` at `<= 479px`).
+
+### Files Changed
+- `assets/images/Chrome BA Monogram Emblem.webp`: Generated optimized WebP image.
+- `index.html`: Added emblem images to `.nav__logo`, `.footer__logo`, and favicon links.
+- `css/style.css`: Added styles for `.nav__logo-img`, `.nav__logo-text`, `.footer__logo-img`, `.footer__logo-text`, and mobile responsive adjustments.
+- `PROJECT_NOTES.md`: Updated with implementation record.
+
+### Verification Results
+- [x] Full QA audit script (`scratch/test_qa.js`): Passed with **0 errors**.
+- [x] Image asset existence check: Verified `Chrome BA Monogram Emblem.webp` exists on disk and is referenced correctly.
+- [x] Local HTTP server probe: Returned HTTP 200 OK.

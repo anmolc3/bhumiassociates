@@ -28,7 +28,7 @@ var PROPERTIES = [
     image: 'assets/images/prop-apartment-1.jpg',
     alt: 'Sample 3 BHK Builder Floor in Bhajanpura, New Delhi',
     description: 'Development sample card. Demonstrates residential apartment layout with dedicated parking and road connectivity.',
-    enquiryLink: 'https://wa.me/919871653127?text=Enquiry%20regarding%20Property%20Ref%3A%20SAMPLE-3BHK-Apartment'
+    enquiryLink: 'https://wa.me/919310704571?text=Enquiry%20regarding%20Property%20Ref%3A%20SAMPLE-3BHK-Apartment'
   },
   {
     id: 'prop-2',
@@ -47,7 +47,7 @@ var PROPERTIES = [
     image: 'assets/images/prop-house-1.jpg',
     alt: 'Sample Independent House in Shahdara, New Delhi',
     description: 'Development sample card. Demonstrates independent residential property structure with private terrace access.',
-    enquiryLink: 'https://wa.me/919871653127?text=Enquiry%20regarding%20Property%20Ref%3A%20SAMPLE-House-Shahdara'
+    enquiryLink: 'https://wa.me/919310704571?text=Enquiry%20regarding%20Property%20Ref%3A%20SAMPLE-House-Shahdara'
   },
   {
     id: 'prop-3',
@@ -66,7 +66,7 @@ var PROPERTIES = [
     image: 'assets/images/prop-commercial-1.jpg',
     alt: 'Sample Retail Commercial Space in Bhajanpura, New Delhi',
     description: 'Development sample card. Demonstrates prime commercial frontage suitable for retail operations or professional office.',
-    enquiryLink: 'https://wa.me/919871653127?text=Enquiry%20regarding%20Property%20Ref%3A%20SAMPLE-Retail-Bhajanpura'
+    enquiryLink: 'https://wa.me/919310704571?text=Enquiry%20regarding%20Property%20Ref%3A%20SAMPLE-Retail-Bhajanpura'
   },
   {
     id: 'prop-4',
@@ -85,7 +85,7 @@ var PROPERTIES = [
     image: 'assets/images/prop-apartment-2.jpg',
     alt: 'Sample 2 BHK Modern Apartment in Yamuna Vihar, New Delhi',
     description: 'Development sample card. Demonstrates compact urban residential apartment with balcony view and natural light.',
-    enquiryLink: 'https://wa.me/919871653127?text=Enquiry%20regarding%20Property%20Ref%3A%20SAMPLE-2BHK-YamunaVihar'
+    enquiryLink: 'https://wa.me/919310704571?text=Enquiry%20regarding%20Property%20Ref%3A%20SAMPLE-2BHK-YamunaVihar'
   },
   {
     id: 'prop-5',
@@ -104,7 +104,7 @@ var PROPERTIES = [
     image: 'assets/images/prop-house-2.jpg',
     alt: 'Sample Duplex Independent Villa in Dilshad Garden, New Delhi',
     description: 'Development sample card. Demonstrates multi-level residential living with modular kitchen and private front court.',
-    enquiryLink: 'https://wa.me/919871653127?text=Enquiry%20regarding%20Property%20Ref%3A%20SAMPLE-Duplex-DilshadGarden'
+    enquiryLink: 'https://wa.me/919310704571?text=Enquiry%20regarding%20Property%20Ref%3A%20SAMPLE-Duplex-DilshadGarden'
   },
   {
     id: 'prop-6',
@@ -123,7 +123,7 @@ var PROPERTIES = [
     image: 'assets/images/prop-commercial-2.jpg',
     alt: 'Sample Corporate Office Space in Shahdara, New Delhi',
     description: 'Development sample card. Demonstrates commercial office floor with reception area, meeting room, and workstation layout.',
-    enquiryLink: 'https://wa.me/919871653127?text=Enquiry%20regarding%20Property%20Ref%3A%20SAMPLE-Office-Shahdara'
+    enquiryLink: 'https://wa.me/919310704571?text=Enquiry%20regarding%20Property%20Ref%3A%20SAMPLE-Office-Shahdara'
   }
 ];
 

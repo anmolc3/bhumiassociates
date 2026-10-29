@@ -19,18 +19,20 @@
      1. ELEMENT REFERENCES
      ==================================================== */
 
-  var siteHeader  = document.getElementById('site-header');
-  var nav         = document.getElementById('site-nav');
-  var hamburger   = document.getElementById('hamburger-btn');
-  var mobileMenu  = document.getElementById('mobile-menu');
-  var desktopMenu = document.getElementById('desktop-menu');
+  var siteHeader   = document.getElementById('site-header');
+  var nav          = document.getElementById('site-nav');
+  var hamburger    = document.getElementById('hamburger-btn');
+  var mobileMenu   = document.getElementById('mobile-menu');
+  var desktopMenu  = document.getElementById('desktop-menu');
+  var backToTopBtn = document.getElementById('back-to-top');
 
   /* ====================================================
-     2. STICKY NAV & TOP BAR COLLAPSE ON SCROLL
+     2. STICKY NAV, TOP BAR & BACK TO TOP ON SCROLL
      ==================================================== */
 
   function onScroll() {
-    var isScrolled = window.scrollY > 40;
+    var scrollY = window.scrollY || window.pageYOffset || 0;
+    var isScrolled = scrollY > 40;
     if (siteHeader) {
       if (isScrolled) {
         siteHeader.classList.add('site-header--scrolled');
@@ -45,10 +47,31 @@
         nav.classList.remove('nav--scrolled');
       }
     }
+    if (backToTopBtn) {
+      if (scrollY > 350) {
+        backToTopBtn.classList.add('is-visible');
+      } else {
+        backToTopBtn.classList.remove('is-visible');
+      }
+    }
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll(); // run once on load in case page is already scrolled
+
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', function () {
+      var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion) {
+        window.scrollTo(0, 0);
+      } else {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+    });
+  }
 
   /* ====================================================
      3. ACTIVE SECTION HIGHLIGHT via IntersectionObserver
@@ -602,13 +625,13 @@
       ];
 
       var waText = waLines.join('\n');
-      var waUrl = 'https://wa.me/919871653127?text=' + encodeURIComponent(waText);
+      var waUrl = 'https://wa.me/919310704571?text=' + encodeURIComponent(waText);
 
       // Show user feedback
       if (statusEl) {
         statusEl.style.display = 'block';
         statusEl.className = 'contact__status contact__status--success';
-        statusEl.textContent = 'Validation successful! Opening WhatsApp to send your enquiry directly to +91 98716 53127...';
+        statusEl.textContent = 'Validation successful! Opening WhatsApp to send your enquiry directly to +91 93107 04571...';
       }
 
       // Open WhatsApp deliberately
