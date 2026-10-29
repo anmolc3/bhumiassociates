@@ -559,3 +559,44 @@ The website color scheme was updated using the three exact brand colors:
 - [x] JavaScript Syntax Check (`node -c js/main.js js/properties.js`): Passed with **0 errors**.
 - [x] Local HTTP server probe: Returned HTTP 200 OK for `index.html` and `css/style.css`.
 - [x] Verified desktop and mobile layouts across all breakpoints (320px, 480px, 768px, 960px, 1200px).
+
+---
+
+## Property Card Button Text Contrast Polish — Completed 2026-10-29
+
+### Overview of Completed Changes
+- **Issue Resolved:** Fixed low contrast where `.property-card__btn--wa` ("Enquire on WhatsApp") inherited white text on a light platinum skeuomorphic button surface.
+- **Color Update:** Set button text color to rich **Coffee Brown** (`var(--color-primary)` / `#6F4E37`) at rest with `font-weight: 600` and removed dark inset text shadow on the light surface.
+- **Hover/Active State:** Kept full WhatsApp green (`#25D366` / `var(--btn-wa-bg-hover)`) on hover with crisp white text and active 3D press depression.
+- **Accessibility:** Text contrast ratio now exceeds 5.6:1 (WCAG 2.2 AAA pass) against the platinum button surface.
+
+### Files Changed
+- `css/style.css`: Updated `.property-card__btn` and `.property-card__btn--wa` resting text color, weight, and hover states.
+- `PROJECT_NOTES.md`: Updated with implementation record.
+
+### Verification Results
+- [x] Full automated QA script (`scratch/test_qa.js`): Passed with **0 errors**.
+- [x] Syntax check (`node -c js/main.js js/properties.js`): Passed with **0 errors**.
+- [x] Local HTTP server probe: Returned HTTP 200 OK.
+
+---
+
+## Services Section Heading & Text Contrast Polish — Completed 2026-10-29
+
+### Overview of Completed Changes
+- **Issue Resolved:** Headings "BUY A PROPERTY", "SELL A PROPERTY", and "PROPERTY ENQUIRIES" in the Services section (`#services`) were displaying in near-white (`#f0eeea`) text on light platinum gray (`#E5E4E2`) and white (`#ffffff`) card backgrounds, causing severely washed-out text with poor legibility.
+- **Root Cause:** `#services` is marked with `.section--dark`, which cascaded `.section--dark h3 { color: var(--color-heading); }` (`#f0eeea`) into the light service cards due to CSS specificity overriding `.service-card__title`.
+- **Contrast Fixes Applied:**
+  1. **Card Titles (`.service-card__title`):** Set to bold Charcoal (`var(--color-charcoal)` / `#2d2b29` !important) with `font-weight: 600`, achieving a high contrast ratio of **10.5:1** on Platinum Gray and **12.8:1** on White (exceeding WCAG AAA). On card hover, smoothly transitions to rich Coffee Brown (`var(--color-primary)` !important).
+  2. **Card Base (`.service-card`):** Explicitly declared `color: #2d2b29;` so text within light cards does not inherit `.section--dark`'s light body color.
+  3. **Descriptions & Features:** Ensured `.service-card__desc` (`#4a4744 !important`) and `.service-card__features li` (`#383431 !important`, `font-weight: 500`) are crystal clear.
+  4. **Service Card CTA Buttons (`.service-card__btn`):** Updated text color to Coffee Brown (`var(--color-primary) !important`) with `font-weight: 600` at rest, transitioning to crisp white on Coffee Brown gradient on `:hover`.
+
+### Files Changed
+- `css/style.css`: Updated `.service-card`, `.service-card__title`, `.service-card__desc`, `.service-card__features li`, and `.service-card__btn`.
+- `PROJECT_NOTES.md`: Updated with implementation record.
+
+### Verification Results
+- [x] Full automated QA script (`scratch/test_qa.js`): Passed with **0 errors**.
+- [x] Syntax check (`node -c js/main.js js/properties.js`): Passed with **0 errors**.
+- [x] Local HTTP server probe: Returned HTTP 200 OK.

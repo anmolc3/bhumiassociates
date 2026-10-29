@@ -1747,6 +1747,7 @@ p  { line-height: var(--lh-body); }
   padding: 40px 32px;
   display: flex;
   flex-direction: column;
+  color: #2d2b29;
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
 }
@@ -1790,19 +1791,29 @@ p  { line-height: var(--lh-body); }
   font-weight: 600;
 }
 
-.service-card__title {
+.service-card__title,
+.services-section .service-card__title,
+.section--dark .service-card__title,
+.service-card h3 {
   font-family: var(--font-heading);
   font-size: 1.75rem;
   line-height: 1.2;
   text-transform: uppercase;
-  color: var(--color-charcoal);
+  color: var(--color-charcoal) !important;
   margin-bottom: 16px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: color 0.25s ease;
+}
+
+.service-card:hover .service-card__title {
+  color: var(--color-primary) !important;
 }
 
 .service-card__desc {
   font-size: 14px;
   line-height: 1.7;
-  color: #4a4744;
+  color: #4a4744 !important;
   margin-bottom: 24px;
   flex-grow: 1;
 }
@@ -1819,10 +1830,11 @@ p  { line-height: var(--lh-body); }
 
 .service-card__features li {
   font-size: 13px;
-  color: #383431;
+  color: #383431 !important;
   position: relative;
   padding-left: 16px;
   line-height: 1.5;
+  font-weight: 500;
 }
 
 .service-card__features li::before {
@@ -1841,16 +1853,18 @@ p  { line-height: var(--lh-body); }
   text-align: center;
   background: var(--btn-sec-bg);
   border: 1px solid var(--btn-sec-border);
-  color: var(--btn-sec-text);
+  color: var(--color-primary) !important;
   border-radius: var(--btn-radius);
   box-shadow: var(--btn-sec-shadow);
-  font-weight: 500;
-  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, background 0.2s ease-out;
+  font-weight: 600;
+  letter-spacing: var(--ls-label);
+  text-shadow: none;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, background 0.2s ease-out, color 0.2s ease-out;
 }
 
 .service-card__btn:hover {
   background: var(--btn-pri-bg);
-  color: #ffffff;
+  color: #ffffff !important;
   border-color: var(--btn-pri-border);
   transform: translateY(-1px);
   box-shadow: var(--btn-pri-shadow-hover);
@@ -2253,14 +2267,16 @@ p  { line-height: var(--lh-body); }
   width: 100%;
   text-align: center;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: var(--ls-label);
   padding: 12px 18px;
   background: var(--btn-sec-bg);
-  color: var(--btn-sec-text);
+  color: var(--color-primary) !important;
   border: 1px solid var(--btn-sec-border);
   border-radius: var(--btn-radius);
   box-shadow: var(--btn-sec-shadow);
-  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, background 0.2s ease-out;
+  text-shadow: none;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, background 0.2s ease-out, color 0.2s ease-out;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -2268,17 +2284,18 @@ p  { line-height: var(--lh-body); }
 }
 
 .property-card__btn:hover {
-  background: var(--btn-sec-bg-hover);
-  color: var(--color-primary-dark);
-  border-color: var(--color-primary-light);
+  background: var(--btn-pri-bg);
+  color: #ffffff !important;
+  border-color: var(--btn-pri-border);
   transform: translateY(-1px);
-  box-shadow: var(--btn-sec-shadow-hover);
+  box-shadow: var(--btn-pri-shadow-hover);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .property-card__btn:active {
-  background: var(--btn-sec-bg-active);
+  background: var(--btn-pri-bg-active);
   transform: translateY(2px);
-  box-shadow: var(--btn-sec-shadow-active);
+  box-shadow: var(--btn-pri-shadow-active);
 }
 
 .property-card__btn:focus-visible {
@@ -2287,25 +2304,23 @@ p  { line-height: var(--lh-body); }
 }
 
 .property-card__btn--wa {
-  background: var(--btn-wa-bg);
-  border-color: var(--btn-wa-border);
-  color: var(--btn-wa-text) !important;
-  box-shadow: var(--btn-wa-shadow);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  color: var(--color-primary) !important;
+  text-shadow: none !important;
 }
 
 .property-card__btn--wa:hover {
-  background: var(--btn-wa-bg-hover);
-  border-color: var(--btn-wa-border);
+  background: var(--btn-wa-bg-hover) !important;
+  border-color: var(--btn-wa-border) !important;
   color: #ffffff !important;
   transform: translateY(-1px);
-  box-shadow: var(--btn-wa-shadow-hover);
+  box-shadow: var(--btn-wa-shadow-hover) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35) !important;
 }
 
 .property-card__btn--wa:active {
-  background: var(--btn-wa-bg-active);
+  background: var(--btn-wa-bg-active) !important;
   transform: translateY(2px);
-  box-shadow: var(--btn-wa-shadow-active);
+  box-shadow: var(--btn-wa-shadow-active) !important;
 }
 
 /* Empty State */
